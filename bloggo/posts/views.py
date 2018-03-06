@@ -15,12 +15,10 @@ def index(request):
 def about(request):
     #################################
     # Question 1
-    # REPLACE THE LINE WITH YOUR CODE
     return render(request, "posts/about.html")
 
 def post_details(request, pk):
     #################################
     # Question 2
-    # You should create a new file in the templates directory.
-    # REPLACE THE LINE WITH YOUR CODE
-    return HttpResponse("No post details page :(")
+    post = Post.objects.get(pk=pk)
+    return render(request, "posts/details.html", {"post": post})
